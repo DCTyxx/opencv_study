@@ -43,7 +43,7 @@ def clahe_demo(image):
 #直方图比较
 def create_rgb_hist(image):
     h,w,c = image.shape
-    rgbHist = np.zeros([16*16*16,1],np.float32)
+    rgbHist = np.zeros([16*16*16,1],np.float32)  #一定要选float32
     #r,g,b的bin的取值为0~16三个相乘及取值空间范围，1为一列
     bsize = 256/16
     for row in range(h):
