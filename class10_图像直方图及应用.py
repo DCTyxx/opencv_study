@@ -55,6 +55,7 @@ def create_rgb_hist(image):
             rgbHist[np.int(index),0] = rgbHist[np.int(index),0]+1
     return rgbHist
 
+#相似度比较
 def hist_compare(image1,image2):
     hist1 = create_rgb_hist(image1)
     hist2 = create_rgb_hist(image2)
@@ -65,17 +66,17 @@ def hist_compare(image1,image2):
 
 #读取图片,读取的数据为numpy的多元数组
 src1 = cv.imread('F:\software/tensorflow&opencv\opencv\pic/windows.jpg')
-src2 = cv.imread('F:\software/tensorflow&opencv\opencv\pic/pangzi.jpg')
+src2 = cv.imread('F:\software\pic\Aluminum_alloy/demo.png')
 
-hist_compare(src1,src2)
+#hist_compare(src1,src2)
 
 #opencv命名
 # cv.namedWindow("input image",cv.WINDOW_AUTOSIZE)
 #显示图片
-cv.imshow("input image1",src1)
+#cv.imshow("input image1",src1)
 cv.imshow("input image2",src2)
 # plot_demo(src)
-# image_demo(src)
+image_demo(src2)
 # equalHist_demo(src1)
 # clahe_demo(src1)
 #等待用户响应
