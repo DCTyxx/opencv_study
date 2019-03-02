@@ -30,8 +30,8 @@ def template_demo():
         br = (tl[0]+tw,tl[1]+th)
         #将矩形绘制到原图上去       线的颜色 线宽
         cv.rectangle(target,tl,br,(0,0,255),2)
-       # cv.imshow("match-"+np.str(md),target)
-        cv.imshow("match-" + np.str(md), result)
+        cv.imshow("match-"+np.str(md),target)
+        #cv.imshow("match-" + np.str(md), result)
 
 
 
