@@ -18,7 +18,7 @@ def threshold_demo(image):
 def local_threshold(image):
     gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)  # 变为灰度图
     #cv.imshow("dst", gray)
-    dst = cv.adaptiveThreshold(gray,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C,cv.THRESH_BINARY,blockSize=25,C=10)#255位最大值   ADAPTIVE_THRESH_GAUSSIAN_C局部二值化方法   blockSize必须为英文  C为像素块的均值，若其他的值减去均值>10确定为白色或黑色，可以防止局部的噪声影响
+    dst = cv.adaptiveThreshold(gray,255,cv.ADAPTIVE_THRESH_GAUSSIAN_C,cv.THRESH_BINARY,blockSize=25,C=10)#255位最大值   ADAPTIVE_THRESH_GAUSSIAN_C局部二值化方法   blockSize必须为奇数  C为像素块的均值，若其他的值减去均值>10确定为白色或黑色，可以防止局部的噪声影响
     dst2 = cv.adaptiveThreshold(gray,255,cv.ADAPTIVE_THRESH_MEAN_C,cv.THRESH_BINARY,blockSize=25,C=10)
     cv.imshow("ADAPTIVE_THRESH_GAUSSIAN_C", dst)
     cv.imshow("ADAPTIVE_THRESH_MEAN_C", dst2)
