@@ -7,12 +7,13 @@ def extrace_object():
     capture = cv.VideoCapture("F:\software/tensorflow&opencv\opencv/video/01.mp4")
     while (True):
         ret,frame = capture.read()
+
         if ret == False:
             break
 
         #过滤绿色   可以很好地追踪颜色对象
         hsv = cv.cvtColor(frame,cv.COLOR_BGR2HSV)
-
+        cv.imshow("hsv", hsv)
         lower_hsv = np.array([37,43,46])#HSV三通道的最小值
         upper_hsv = np.array([77, 255, 255])#HSV三通道的最大值
 
