@@ -35,6 +35,7 @@ def line_detect_possible_demo(image):
     for line in lines:
         x1,y1,x2,y2 = line[0]
         cv.line(image, (x1, y1), (x2, y2), (0, 0, 255), 2)  # 将直线绘画到图片上
+    cv.namedWindow("line_detect_possible_demo", cv.WINDOW_NORMAL)
     cv.imshow("line_detect_possible_demo", image)
 
 
@@ -46,9 +47,9 @@ def line_detect_possible_demo(image):
 
 
 #读取图片,读取的数据为numpy的多元数组
-src = cv.imread('F:\software\pic\Aluminum_alloy/demo.png')
+src = cv.imread('F:\software\pic\Aluminum_alloy\pic\pic/3-2.jpg')
 #opencv命名
-cv.namedWindow("input image",cv.WINDOW_AUTOSIZE)
+cv.namedWindow("input image",cv.WINDOW_NORMAL)
 #显示图片
 cv.imshow("input image",src)
 line_detect_possible_demo(src)

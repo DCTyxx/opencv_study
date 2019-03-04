@@ -21,15 +21,17 @@ def edge_demo(image):
     edge_output = cv.Canny(xgrad,ygrad,50,150)#50为低阈值，150为高阈值
     edge_output = cv.Canny(gray, 50, 150)
 
+    cv.namedWindow("Canny Edge", cv.WINDOW_NORMAL)
     cv.imshow("Canny Edge",edge_output)
 
     #输出为彩色
     dst = cv.bitwise_and(image,image,mask=edge_output)
+    cv.namedWindow("Color Edge", cv.WINDOW_NORMAL)
     cv.imshow("Color Edge",dst)
 
 
 #读取图片,读取的数据为numpy的多元数组
-src = cv.imread('F:\software\pic\Aluminum_alloy/demo.png')
+src = cv.imread('F:\software\pic\Aluminum_alloy\pic\pic/3-2.jpg')
 #opencv命名
 cv.namedWindow("input image",cv.WINDOW_AUTOSIZE)
 #显示图片
