@@ -8,25 +8,35 @@ def measure_object(image):
     #打印阈值
     print("threshold value : %s"%ret)
     cv.imshow("binary image",binary)
+    gray = cv.cvtColor(binary,cv.COLOR_GRAY2BGR)
     contours,hireachy = cv.findContours(binary,cv.RETR_EXTERNAL,cv.CHAIN_APPROX_SIMPLE)
     for i,contour in enumerate(contours):
         area = cv.contourArea(contour)#计算面积
         x,y,w,h = cv.boundingRect(contour)#轮廓的外接矩形
+        rate = min(w,h)/max(w,h)
+        print("ractangle rate : %s"%rate)
         mm = cv.moments(contour)#计算几何矩
-        type(mm)
+        print(type(mm))
         #计算原点的中心
         if (mm["m00"] == 0):  # this is a line
             cx,cy=0,0
         else:
             cx = mm['m10']/mm['m00']
             cy = mm['m01']/mm['m00']
-            cv.circle(image,(np.int(cx),np.int(cy)),2,(0,255,255),-1)
+            cv.circle(gray,(np.int(cx),np.int(cy)),2,(0,255,255),-1)
             #对轮廓绘制外接矩形
-            cv.rectangle(image,(x,y),(x+w,y+w),(0,0,255),2)
+            #cv.rectangle(gray,(x,y),(x+w,y+w),(0,0,255),2)
+            print ("contour area %s"%area)
+            #多边形逼近
+            approxCure = cv.approxPolyDP(contour,4,True)
+            print(approxCure.shape)
+            if approxCure.shape[0]>6:#图片超过6条线段
+                cv.drawContours(dst,contours,i,(0,255,0),2)
+
 
 
     cv.namedWindow("measure_contours", cv.WINDOW_NORMAL)
-    cv.imshow("measure_contours", image)
+    cv.imshow("measure_contours", gray)
 
 
 
