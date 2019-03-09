@@ -47,7 +47,7 @@ def scharr_demo(image):  #Scharr算子为sobel算子的加强
 
 
 #读取图片,读取的数据为numpy的多元数组
-src = cv.imread('F:\software\pic\Aluminum_alloy/demo.png')
+src = cv.imread('F:\software\pic\Aluminum_alloy/pic/demo.png')
 #opencv命名
 cv.namedWindow("input image",cv.WINDOW_AUTOSIZE)
 #显示图片

@@ -73,13 +73,13 @@ cv.imshow("input image", src)
 cv.imshow("input image2", src2)
 
 
-contrast_brightness_demo(src2,1.5,10)
-
-add_demo(src,src2)
-subtract_demo(src,src2)
-divide_demo(src,src2)
-multipy_demo(src,src2)
-other(src,src2)
+# contrast_brightness_demo(src2,1.5,10)
+#
+# add_demo(src,src2)
+# subtract_demo(src,src2)
+# divide_demo(src,src2)
+# multipy_demo(src,src2)
+# other(src,src2)
 logic_demo(src,src2)
 cv.waitKey(0)
 

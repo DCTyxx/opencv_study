@@ -35,8 +35,8 @@ cv.imshow("input image",src)
 gaussian_noise(src)
 
 #高斯模糊   保留图片的主要特征
-dst = cv.GaussianBlur(src,(0,0),15)
-# dst = cv.GaussianBlur(src,(5,5),0) #(5,5)为卷积核,0为高斯滤波的 σ
+#dst = cv.GaussianBlur(src,(0,0),10)
+dst = cv.GaussianBlur(src,(5,5),0) #(5,5)为卷积核,0为高斯滤波的 σ
 cv.imshow("GaussianBlur",dst)
 #等待用户响应
 cv.waitKey(0)

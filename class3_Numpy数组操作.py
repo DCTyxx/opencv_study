@@ -7,7 +7,7 @@ def access_pixels(image):
     height = image.shape[0]
     width = image.shape[1]
     channels = image.shape[2]
-    print("height : %s, width : %s, channels : %s"%(height,width,channels))#答应图片的宽高
+    print("height : %s, width : %s, channels : %s"%(height,width,channels))#打印图片的宽高
     #对图片做处理
     for row in range(height):
         for col in range(width):
@@ -19,7 +19,7 @@ def access_pixels(image):
 def inverse(image):
     #像素取反，等同于 image[row, col, c] = 255-pv
     dst = cv.bitwise_not(image)
-    cv.imshow(dst)
+    cv.imshow("pixelsshow",dst)
 
 #新建一张图片
 def create_image():
@@ -45,8 +45,9 @@ cv.namedWindow("input image", cv.WINDOW_AUTOSIZE)
 # 显示图片
 cv.imshow("input image", src)
 
-create_image()
-
+#create_image()
+inverse(src)
+access_pixels(src)
 # #计算程序运行时长
 # t1 = cv.getTickCount()
 # access_pixels(src)

@@ -36,7 +36,7 @@ def lapalian_demo(image):#拉普拉斯金字塔
 
 
 #读取图片,读取的数据为numpy的多元数组
-src = cv.imread('F:\software\pic\Aluminum_alloy/demo.png') #图片像素推荐为2的倍数
+src = cv.imread('F:\software\pic\Aluminum_alloy/pic/demo.png') #图片像素推荐为2的倍数
 #src = cv.resize(src,(512,512))#图像变换
 #opencv命名
 cv.namedWindow("input image",cv.WINDOW_AUTOSIZE)

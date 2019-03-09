@@ -35,12 +35,12 @@ def custom_threshold(image):
 
 
 #读取图片,读取的数据为numpy的多元数组
-src = cv.imread('F:\software\pic\Aluminum_alloy/demo.png')
+src = cv.imread('F:\software\pic\Aluminum_alloy/pic/demo.png')
 #opencv命名
 cv.namedWindow("input image",cv.WINDOW_AUTOSIZE)
 #显示图片
 cv.imshow("input image",src)
-#local_threshold(src)
+local_threshold(src)
 custom_threshold(src)
 #等待用户响应
 cv.waitKey(0)
