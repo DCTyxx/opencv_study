@@ -8,8 +8,6 @@
 import cv2 as cv
 import numpy as np
 
-
-
 def edge_demo(image):
     blurred = cv.GaussianBlur(image,(3,3),0)#高斯模糊 size如果有值，sigma不用设置 canny对噪声敏感
     gray = cv.cvtColor(blurred,cv.COLOR_BGR2GRAY)
